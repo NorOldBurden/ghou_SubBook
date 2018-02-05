@@ -19,6 +19,7 @@
  *   0. You just DO WHAT THE FUCK YOU WANT TO.
  */
 
+
 package com.example.carl.ghou_subbook;
 
 import android.content.Intent;
@@ -97,10 +98,7 @@ public class AddActivity extends AppCompatActivity {
         if(name == null || name.isEmpty()){
             Log.d("AddActivity", "invalid name");
             return false;
-        } else if (comments == null || comments.isEmpty()){
-            Log.d("AddActivity", "null or empty comments");
-            return false;
-        } else if(charge == -250 || charge < 0){
+        }  else if(charge == -250 || charge < 0){
             Log.d("AddActivity", "empty charge");
             return false;
         } else if(!isDateValid()){

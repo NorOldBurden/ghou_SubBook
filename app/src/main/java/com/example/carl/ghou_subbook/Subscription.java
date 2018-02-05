@@ -23,6 +23,12 @@ package com.example.carl.ghou_subbook;
 
 import java.util.Calendar;
 
+/**
+ * Subscription is the object which will provide information for listView to show
+ * It takes name, date, charge and comments as args and other class can access these
+ * variables by get and set method.
+ */
+
 public class Subscription {
     private String name;
     private String date;

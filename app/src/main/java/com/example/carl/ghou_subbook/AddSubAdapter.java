@@ -33,6 +33,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This adapter is used to connect listView to layout
+ */
+
 public class AddSubAdapter extends ArrayAdapter{
 
     public AddSubAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Subscription> objects) {
@@ -51,6 +55,11 @@ public class AddSubAdapter extends ArrayAdapter{
         TextView tvDate = (TextView) convertView.findViewById(R.id.subDate);
         TextView tvCharge = (TextView) convertView.findViewById(R.id.subCharge);
         TextView tvComments = (TextView) convertView.findViewById(R.id.subComments);
+
+        /**
+         * The following part is to set specific view in the view group to
+         * different contents like name, date, charge and comments.
+         */
 
         tvName.setText(subscription.getName());
         tvDate.setText("Date: " + subscription.getDate());
