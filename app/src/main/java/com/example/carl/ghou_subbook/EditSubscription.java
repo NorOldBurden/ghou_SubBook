@@ -58,7 +58,6 @@ public class EditSubscription extends AppCompatActivity {
 
         loadInfo(editSub);
 
-
         final Button subButton = (Button) findViewById(R.id.editSubButton);
 
         View.OnClickListener listener = new View.OnClickListener(){
