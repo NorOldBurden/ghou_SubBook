@@ -34,6 +34,11 @@ import android.widget.Toast;
 
 import com.google.gson.*;
 
+/**
+ * This activity will show the user few text views and allow user to fill in the info of
+ * a new subscription.
+ */
+
 public class AddActivity extends AppCompatActivity {
     public final static int GOOD_RESULT = 120;
 
@@ -47,6 +52,10 @@ public class AddActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener(){
             public void onClick(View view) {
 
+                /**
+                 * Check if the input format fits the requirement then pack up the instance of subscription then send it
+                 * back to main activity.
+                 */
                 if (canSubmit()) {
                     Log.d("AddActivity", "if canSubmit true");
                     Intent intent = new Intent();
@@ -65,6 +74,10 @@ public class AddActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Get name, date, charge and comments from the user input.
+     * @return
+     */
     public String getName(){
         EditText editText = findViewById(R.id.editName);
         return editText.getText().toString();
@@ -90,6 +103,13 @@ public class AddActivity extends AppCompatActivity {
         return editText.getText().toString();
     }
 
+    /**
+     * This method will check if the input format is valid.
+     * The name can't be empty.
+     * The date has to be in yyyy-mm-dd
+     * The charge should be double
+     * @return
+     */
     public boolean canSubmit(){
         String name = this.getName();
         String comments = this.getComments();
@@ -110,6 +130,10 @@ public class AddActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method is used to check if date is in format of yyyy-mm-dd.
+     * @return
+     */
     public boolean isDateValid(){
         String date = this.getDate();
         char[] dateArray = date.toCharArray();
